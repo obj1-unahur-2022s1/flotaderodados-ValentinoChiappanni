@@ -8,7 +8,7 @@ class Corsa {
 
 class Kwid{
 	var property tanqueAdicional = false
-	method color() = "Azul"
+	method color() = "azul"
 	method capacidad() = if(tanqueAdicional){3}else{4}
 	method velocidadMaxima() = if(tanqueAdicional){120}else{110}
 	method peso() = 1200 + if(tanqueAdicional){150}else{0}
@@ -20,7 +20,7 @@ object trafic {
 	method capacidad()= interiorActual.capacidad()
 	method velocidadMaxima() = motorActual.velocidadMaxima()
 	method peso() = 4000 + interiorActual.peso() + motorActual.peso()
-	method color() = "Blanco"
+	method color() = "blanco"
 }
 
 object interiorComodo{

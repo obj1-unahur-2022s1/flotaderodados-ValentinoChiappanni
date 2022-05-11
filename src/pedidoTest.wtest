@@ -1,0 +1,13 @@
+import pedido.*
+import rodados.*
+
+describe"test global pedidos"{
+	var p1 = new Pedido(distancia=950,tiempoMaximo=8,pasajerosATransportar=4,coloresIncompatibles=["azul","negro"])
+	test"corsa sastifacer pedido"{
+		assert.that(p1.loPuedoSastifacer(new Corsa(color="rojo")))
+	}
+	test"corsa no sastifacer pedido"{
+		p1.coloresIncompatibles(["azul","negro","Rojo"])
+		assert.notThat(p1.loPuedoSastifacer(cachito)
+	}
+}

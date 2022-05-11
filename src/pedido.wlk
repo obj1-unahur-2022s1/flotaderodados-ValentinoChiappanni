@@ -4,4 +4,9 @@ class Pedido {
 	var property pasajerosATransportar
 	var property coloresIncompatibles = []
 	method velocidadRequerida() = distancia/tiempoMaximo
+	method loPuedoSastifacer(unVehiculo){
+		return unVehiculo.velocidadMaxima() >= self.velocidadRequerida()+10 and
+		unVehiculo.capacidad() >= pasajerosATransportar and
+		not coloresIncompatibles.contains(unVehiculo.color())
+	}
 }
