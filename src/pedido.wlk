@@ -9,4 +9,10 @@ class Pedido {
 		unVehiculo.capacidad() >= pasajerosATransportar and
 		not coloresIncompatibles.contains(unVehiculo.color())
 	}
+	method acelerar(){
+		tiempoMaximo = 0.max(tiempoMaximo-1)
+	}
+	method relajar(){
+		tiempoMaximo += 1
+	}
 }
