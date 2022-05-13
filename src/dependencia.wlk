@@ -38,6 +38,28 @@ class Dependencia {
 	method esGrande(){
 		return cantEmpleados>= 40 and self.cantidadDeRodados() >= 5
 	}
+	method agregarUnPedido(unPedido){
+		pedidos.add(unPedido)
+	}
+	method sacarUnPedido(unPedido){
+		pedidos.remove(unPedido)
+	}
+	method totalDePasajerosATransportar(){
+		return pedidos.sum({p=>p.pasajerosATransportar()})
+	}
+	method pedidosInsatisfechos() {
+		return pedidos.filter( { p => not self.puedeSatisfacerPedido(p) })
+	}
+	
+	method puedeSatisfacerPedido( pedido ) {
+		return rodados.any ({ r => pedido.loPuedeSatisfacer(r) })
+	}
+	method esColorImpatibleParaTodosLosPedidos(unColor) {
+		return pedidos.all({p=>p.coloresIncompatibles().contains(unColor)})
+	}
+	method relajarTodosLosPedidosRegistrado() {
+		pedidos.forEach( { p=> p.relajar()})
+	}
 	
 }
 
